@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").hide("slow", function(){
+    });
+  });
+});
+</script>
+<style> 
+#panel, #flip {
+  padding: 7px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+#panel {
+  padding: 50px;
+  display: none;
+  background-color: #b8c0a4;
+  border-radius: 15px;
+}
+#clica {
+    width: 400px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+#depois {
+  
+}
+</style>
+</head>
+<body>
+ 
+<div id="flip">Clique para ver</div>
+<div id="panel">Finge que tem um textão super bolado aqui.</div>
+
+<br>
+<br>
+
+<div id="clica">Clique ai mano</div>
+<div id="depois">Textão</div>
+
+<button>Esconder</button>
+<p>Parágrafo super interessante.</p>
+
+</body>
+</html>
