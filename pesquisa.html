@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Filtro - pesquisa</title>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#pesquisa").on("keyup", function () {
+                var valor = $(this).val().toLowerCase();
+                $("#tabela tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(valor) > -1)
+                });
+            });
+        });
+    </script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <h2>Tabela pesquisável</h2>
+        <p>Escreva algo no campo de pesquisa para encontrar algo:</p>
+        <input id="pesquisa" type="text" placeholder="Pesquisar...">
+        <br><br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="tabela">
+                <tr>
+                    <td>Carlos</td>
+                    <td>Santos</td>
+                    <td>carlos@example.com</td>
+                </tr>
+                <tr>
+                    <td>José</td>
+                    <td>Paulo</td>
+                    <td>José@mail.com</td>
+                </tr>
+                <tr>
+                    <td>Julia</td>
+                    <td>Moraes</td>
+                    <td>julia@greatstuff.com</td>
+                </tr>
+                <tr>
+                    <td>Anjela</td>
+                    <td>Souza</td>
+                    <td>a_s@test.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Note que começamos a tabela no "tbody".</p>
+    </body>
+
+</html>
