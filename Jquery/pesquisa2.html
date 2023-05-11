@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Pesquisa no texto</title>
+</head>
+
+<body>
+    <script>
+        
+        $(document).ready(function () {
+            $("#pesquisa").on("keyup", function () {
+                var valor = $(this).val().toLowerCase();
+                $("p").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(valor) > -1)
+                });
+            });
+        });
+    </script>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil et deleniti quasi. Dolorum, quos
+            provident neque soluta quaerat cumque totam porro enim saepe, earum amet, nisi suscipit voluptatum possimus
+            ad.</p>
+        <p>textão aqui top.</p>
+        <p>Lê esse também</p>
+        <p>Esse aqui é massa</p>
+        <p>Massa mesmo</p>
+        <p>Finque que tem algo aqui</p>
+        <p>Yeaaaaaaaaaaaaa</p>
+    <input id="pesquisa" type="text" placeholder="Pesquisar...">
+</body>
+
+</html>
